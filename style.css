@@ -2,132 +2,102 @@ body {
     margin: 0;
     font-family: sans-serif;
     background-color: #f8f2e3; /* Цвет фона */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Занимает всю высоту экрана */
-    position: relative; /* Для позиционирования фоновых изображений */
-    overflow: hidden; /* Предотвращает горизонтальную прокрутку */
+    display: flex; /* Используем Flexbox */
+    flex-direction: column; /* Элементы идут друг за другом сверху вниз */
+    min-height: 100vh; /* Занимает всю высоту экрана, без скролла */
+    overflow: hidden; /* Скрывает скролл */
+    position: relative; /* Для позиционирования нижних элементов */
 }
 
 /* Верхний логотип NutSoft */
 .top-logo {
     text-align: center;
-    padding: 20px 0; /* Отступ сверху и снизу */
-    z-index: 10; /* Чтобы был поверх других элементов */
-    position: relative;
+    padding: 20px 0;
+    z-index: 10;
 }
 
 .top-logo img {
-    max-width: 100px; /* Размер логотипа */
+    width: 100px; /* Фиксированный размер, можно изменить */
     height: auto;
 }
 
-/* Блок с лого приложения и кнопкой Google Play */
+/* Центральный блок с лого приложения и кнопкой */
 .header-content {
-    flex-grow: 1; /* Растягивает блок, чтобы оттолкнуть нижние элементы */
+    flex-grow: 1; /* Этот блок будет занимать всё доступное пространство */
     display: flex;
-    justify-content: center;
-    align-items: center; /* Центрирует по вертикали */
-    text-align: center;
+    justify-content: center; /* Выравнивает содержимое по горизонтали по центру */
+    align-items: center; /* Выравнивает содержимое по вертикали по центру */
     z-index: 5;
-    position: relative;
+    text-align: center;
 }
 
 .app-info {
     display: flex;
-    align-items: center; /* Выравнивает лого и кнопку по центру */
-    gap: 30px; /* Отступ между лого приложения и кнопкой */
-    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку на маленьких экранах */
+    align-items: center;
     justify-content: center;
+    gap: 30px; /* Отступ между лого и кнопкой */
 }
 
 .app-logo {
-    max-width: 180px; /* Размер лого приложения */
+    width: 180px;
     height: auto;
 }
 
 .play-button img {
-    max-width: 200px; /* Размер кнопки Google Play */
+    width: 200px;
     height: auto;
-    transition: transform 0.2s ease; /* Анимация при наведении */
+    transition: transform 0.2s ease;
 }
 
 .play-button img:hover {
-    transform: scale(1.05); /* Увеличивается при наведении */
+    transform: scale(1.05);
 }
 
-/* Нижние графические элементы */
+/* Нижние элементы */
 .bottom-graphics {
+    width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: auto;
     display: flex;
-    justify-content: center; /* Центрирует элементы по горизонтали */
-    align-items: flex-end; /* Привязывает к низу */
-    pointer-events: none; /* Чтобы не мешали взаимодействовать с другими элементами */
+    flex-direction: column;
+    align-items: center; /* Центрирует по горизонтали */
+    justify-content: flex-end;
+    pointer-events: none;
     z-index: 1;
 }
 
 .bg-image {
-    position: absolute;
-    bottom: 0;
-    width: 100%; /* Растягивается на всю ширину */
-    max-height: 50vh; /* Максимальная высота, чтобы не перекрывать все */
-    object-fit: contain; /* Сохраняет пропорции, может быть cover */
-    object-position: bottom center; /* Привязывает к низу и центру */
+    width: 100%;
+    height: auto;
     z-index: 0;
-    pointer-events: none;
+    object-fit: cover;
 }
 
 .girl-image {
-    position: relative; /* Относительно bottom-graphics */
-    max-width: 300px; /* Размер изображения девочки */
+    width: 300px;
     height: auto;
-    margin-bottom: -10px; /* Небольшой отступ, чтобы девочка "стояла" на bg.png */
-    z-index: 2; /* Девочка поверх bg.png */
-    pointer-events: none;
+    position: absolute;
+    bottom: 0; /* Привязываем девочку к низу */
+    z-index: 2; /* Девочка поверх фонового изображения */
 }
 
 /* Медиа-запросы для адаптивности */
 @media (max-width: 768px) {
     .top-logo img {
-        max-width: 80px;
+        width: 80px;
     }
-
     .app-logo {
-        max-width: 150px;
+        width: 150px;
     }
-
     .play-button img {
-        max-width: 180px;
+        width: 180px;
     }
-
     .app-info {
-        flex-direction: column; /* На маленьких экранах лого и кнопка будут друг под другом */
+        flex-direction: column;
         gap: 15px;
     }
-
     .girl-image {
-        max-width: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    .top-logo {
-        padding: 10px 0;
-    }
-    .top-logo img {
-        max-width: 60px;
-    }
-    .app-logo {
-        max-width: 120px;
-    }
-    .play-button img {
-        max-width: 150px;
-    }
-    .girl-image {
-        max-width: 200px;
+        width: 250px;
     }
 }
