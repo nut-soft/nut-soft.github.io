@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f8f2e3; /* Цвет фона */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Занимает всю высоту экрана */
+    position: relative; /* Для позиционирования фоновых изображений */
+    overflow: hidden; /* Предотвращает горизонтальную прокрутку */
+}
+
+/* Верхний логотип NutSoft */
+.top-logo {
+    text-align: center;
+    padding: 20px 0; /* Отступ сверху и снизу */
+    z-index: 10; /* Чтобы был поверх других элементов */
+    position: relative;
+}
+
+.top-logo img {
+    max-width: 100px; /* Размер логотипа */
+    height: auto;
+}
+
+/* Блок с лого приложения и кнопкой Google Play */
+.header-content {
+    flex-grow: 1; /* Растягивает блок, чтобы оттолкнуть нижние элементы */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Центрирует по вертикали */
+    text-align: center;
+    z-index: 5;
+    position: relative;
+}
+
+.app-info {
+    display: flex;
+    align-items: center; /* Выравнивает лого и кнопку по центру */
+    gap: 30px; /* Отступ между лого приложения и кнопкой */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку на маленьких экранах */
+    justify-content: center;
+}
+
+.app-logo {
+    max-width: 180px; /* Размер лого приложения */
+    height: auto;
+}
+
+.play-button img {
+    max-width: 200px; /* Размер кнопки Google Play */
+    height: auto;
+    transition: transform 0.2s ease; /* Анимация при наведении */
+}
+
+.play-button img:hover {
+    transform: scale(1.05); /* Увеличивается при наведении */
+}
+
+/* Нижние графические элементы */
+.bottom-graphics {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center; /* Центрирует элементы по горизонтали */
+    align-items: flex-end; /* Привязывает к низу */
+    pointer-events: none; /* Чтобы не мешали взаимодействовать с другими элементами */
+    z-index: 1;
+}
+
+.bg-image {
+    position: absolute;
+    bottom: 0;
+    width: 100%; /* Растягивается на всю ширину */
+    max-height: 50vh; /* Максимальная высота, чтобы не перекрывать все */
+    object-fit: contain; /* Сохраняет пропорции, может быть cover */
+    object-position: bottom center; /* Привязывает к низу и центру */
+    z-index: 0;
+    pointer-events: none;
+}
+
+.girl-image {
+    position: relative; /* Относительно bottom-graphics */
+    max-width: 300px; /* Размер изображения девочки */
+    height: auto;
+    margin-bottom: -10px; /* Небольшой отступ, чтобы девочка "стояла" на bg.png */
+    z-index: 2; /* Девочка поверх bg.png */
+    pointer-events: none;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .top-logo img {
+        max-width: 80px;
+    }
+
+    .app-logo {
+        max-width: 150px;
+    }
+
+    .play-button img {
+        max-width: 180px;
+    }
+
+    .app-info {
+        flex-direction: column; /* На маленьких экранах лого и кнопка будут друг под другом */
+        gap: 15px;
+    }
+
+    .girl-image {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-logo {
+        padding: 10px 0;
+    }
+    .top-logo img {
+        max-width: 60px;
+    }
+    .app-logo {
+        max-width: 120px;
+    }
+    .play-button img {
+        max-width: 150px;
+    }
+    .girl-image {
+        max-width: 200px;
+    }
+}
