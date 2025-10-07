@@ -2,11 +2,11 @@ body {
     margin: 0;
     font-family: sans-serif;
     background-color: #f8f2e3; /* Цвет фона */
-    display: flex; /* Используем Flexbox */
-    flex-direction: column; /* Элементы идут друг за другом сверху вниз */
-    min-height: 100vh; /* Занимает всю высоту экрана, без скролла */
-    overflow: hidden; /* Скрывает скролл */
-    position: relative; /* Для позиционирования нижних элементов */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
 }
 
 /* Верхний логотип NutSoft */
@@ -17,26 +17,25 @@ body {
 }
 
 .top-logo img {
-    width: 100px; /* Фиксированный размер, можно изменить */
-    height: 130px;
+    width: 100px;
+    height: auto;
 }
 
 /* Центральный блок с лого приложения и кнопкой */
 .header-content {
-    flex-grow: 1; /* Этот блок будет занимать всё доступное пространство */
     display: flex;
-    justify-content: center; /* Выравнивает содержимое по горизонтали по центру */
-    align-items: flex-start; /* **ВЫРАВНИВАЕТ СОДЕРЖИМОЕ ВВЕРХУ** */
-    padding-top: 15vh; /* **ДОПОЛНИТЕЛЬНОЕ ВЫРАВНИВАНИЕ. МОЖНО ИЗМЕНИТЬ ЗНАЧЕНИЕ** */
+    justify-content: center;
+    align-items: center; /* Центрирует содержимое по вертикали */
     z-index: 5;
     text-align: center;
+    margin-top: 15vh; /* **ПОДНИМАЕМ БЛОК ВВЕРХ** */
 }
 
 .app-info {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px; /* Отступ между лого и кнопкой */
+    gap: 30px;
 }
 
 .app-logo {
@@ -62,7 +61,7 @@ body {
     left: 0;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрирует по горизонтали */
+    align-items: center;
     justify-content: flex-end;
     pointer-events: none;
     z-index: 1;
@@ -79,8 +78,8 @@ body {
     width: 300px;
     height: auto;
     position: absolute;
-    bottom: 0; /* Привязываем девочку к низу */
-    z-index: 2; /* Девочка поверх фонового изображения */
+    bottom: 0;
+    z-index: 2;
 }
 
 /* Медиа-запросы для адаптивности */
