@@ -28,7 +28,7 @@ body {
     align-items: center; /* Центрирует содержимое по вертикали */
     z-index: 5;
     text-align: center;
-    margin-top: 8vh; /* **ПОДНИМАЕМ БЛОК ВВЕРХ** */
+    margin-top: 14vh; /* **ПОДНИМАЕМ БЛОК ВВЕРХ** */
 }
 
 .app-info {
@@ -99,5 +99,9 @@ body {
     }
     .girl-image {
         width: 250px;
+    }
+    /* **НОВЫЙ КОД ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ** */
+    .header-content {
+        margin-top: 8vh; /* **УМЕНЬШАЕМ ОТСТУП, ЧТОБЫ ПОДНЯТЬ БЛОК ВЫШЕ** */
     }
 }
