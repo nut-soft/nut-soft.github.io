@@ -18,7 +18,7 @@ body {
 
 .top-logo img {
     width: 66px;
-    height: auto;
+    height: 106px;
 }
 
 /* Центральный блок с лого приложения и кнопкой */
@@ -28,7 +28,7 @@ body {
     align-items: center; /* Центрирует содержимое по вертикали */
     z-index: 5;
     text-align: center;
-    margin-top: 15vh; /* **ПОДНИМАЕМ БЛОК ВВЕРХ** */
+    margin-top: 8vh; /* **ПОДНИМАЕМ БЛОК ВВЕРХ** */
 }
 
 .app-info {
