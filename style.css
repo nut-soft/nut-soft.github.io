@@ -28,7 +28,7 @@ body {
     align-items: center; /* Центрирует содержимое по вертикали */
     z-index: 5;
     text-align: center;
-    margin-top: 14vh; /* **ПОДНИМАЕМ БЛОК ВВЕРХ** */
+    margin-top: 15vh; /* **ПОДНИМАЕМ БЛОК ВВЕРХ** */
 }
 
 .app-info {
