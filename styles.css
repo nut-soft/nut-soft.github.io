@@ -1,3 +1,7 @@
+/* ====================================================================== */
+/* БАЗОВЫЕ СТИЛИ (ДЛЯ ДЕСКТОПА 1200px И БОЛЕЕ) */
+/* ====================================================================== */
+
 /* Общие стили и сброс */
 body {
     background-color: #1e2025;
@@ -12,6 +16,7 @@ body {
 /* 1. Основной контейнер */
 .container {
     width: 1200px; 
+    max-width: 100%; /* Добавляем max-width для адаптивности */
     box-sizing: border-box;
     /* Убедимся, что все элементы внутри прилегают к границам контейнера */
 }
@@ -27,7 +32,6 @@ body {
 .header-logo {
     width: 179px;
     height: 54px;
-    /* Убедитесь, что ваше изображение логотипа NUTSDEV имеет эти размеры */
 }
 
 /* 3. РАЗДЕЛИТЕЛЬ */
@@ -111,24 +115,7 @@ body {
     max-width: 450px; /* Ограничиваем ширину текста, как на макете */
 }
 
-.description-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px; /* Отступ между заголовком и основным текстом */
-}
-
-.description-icon {
-    /* На макете используется та же иконка, но уменьшенная */
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
-}
-
-.description-title {
-    font-size: 20px;
-    font-weight: 700; /* Визуально текст заголовка жирный */
-    margin: 0;
-}
+/* .description-header - удален, так как его нет в последнем HTML */
 
 .description-text {
     font-size: 20px;
@@ -169,6 +156,114 @@ body {
 }
 
 .footer-email {
-    font-size: 16px; /* Визуально текст email крупнее, чем стандартный 16px */
+    font-size: 16px; 
     font-weight: 500;
+}
+
+
+/* ====================================================================== */
+/* МЕДИАЗАПРОСЫ (MEDIA QUERIES) - АДАПТИВНЫЙ ДИЗАЙН ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
+/* ====================================================================== */
+
+/* Стили применяются, когда ширина экрана меньше или равна 768px (планшеты и телефоны) */
+@media screen and (max-width: 768px) {
+    
+    /* Уменьшаем общие отступы по бокам */
+    .container {
+        padding: 0 20px; /* Боковые отступы для всего контента */
+    }
+    
+    .header {
+        padding-top: 30px; 
+        padding-bottom: 30px; 
+    }
+
+    /* ОСНОВНОЙ КОНТЕНТ */
+    .main-content {
+        flex-direction: column; /* Блоки идут друг за другом (сверху вниз) */
+        padding-top: 30px; 
+        padding-bottom: 30px; 
+        align-items: center; /* Центрируем весь блок по горизонтали */
+    }
+
+    /* ЛЕВЫЙ И ПРАВЫЙ БЛОКИ */
+    .content-left,
+    .content-right {
+        width: 100%; /* Занимают всю доступную ширину */
+        padding-right: 0;
+        margin-bottom: 40px; /* Отступ между блоками */
+        align-items: center; /* Центрируем элементы внутри блока */
+        text-align: center;
+    }
+
+    /* ПОРЯДОК БЛОКОВ (для мобильной версии: текст-кнопка, потом картинка) */
+    .content-left {
+        order: 1; /* Помещаем текстовый контент первым */
+    }
+    
+    .content-right {
+        order: 2; /* Помещаем картинку второй */
+        justify-content: center;
+        margin-bottom: 0;
+    }
+
+    /* ЭЛЕМЕНТЫ ВНУТРИ ЛЕВОГО БЛОКА */
+    .title-block {
+        flex-direction: column; /* Иконка над текстом заголовка */
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .title-icon {
+        width: 120px; /* Уменьшаем размер иконки */
+        height: 120px;
+    }
+
+    .title-text-wrapper {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    
+    .title-line-1, .title-line-2 {
+        font-size: 26px; /* Уменьшаем размер шрифта для мобильных */
+    }
+
+    .description-block {
+        max-width: 90%; /* Ограничиваем ширину для лучшей читаемости */
+        margin-bottom: 30px;
+        /* Переопределяем центрирование блока текста, чтобы он центрировался на странице */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .description-text {
+        font-size: 16px; /* Уменьшаем размер текста */
+    }
+    
+    .google-play-button {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    /* ИЗОБРАЖЕНИЕ */
+    .content-image {
+        width: 90%; /* Изображение занимает 90% ширины экрана */
+        height: auto;
+        margin: 0 auto; /* Центрируем изображение */
+    }
+    
+    /* FOOTER */
+    .footer {
+        flex-direction: column; /* Лого над email */
+        padding: 20px 0;
+        align-items: center;
+    }
+    
+    .footer-logo {
+        margin-bottom: 10px;
+    }
+    
+    .footer-email {
+        font-size: 16px;
+    }
 }
