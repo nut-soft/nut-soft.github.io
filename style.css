@@ -1,107 +1,136 @@
+/* Общие стили и сброс */
 body {
+    background-color: #1e2025;
+    color: #ffffff; /* Белый цвет текста по умолчанию */
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
-    font-family: sans-serif;
-    background-color: #f8f2e3; /* Цвет фона */
+    padding: 0;
+    display: flex; /* Для центрирования контейнера */
+    justify-content: center;
+}
+
+/* 1. Основной контейнер */
+.container {
+    width: 1200px; /* Фиксированная ширина контента */
+    box-sizing: border-box;
+}
+
+/* 2. HEADER */
+.header {
+    display: flex;
+    justify-content: center; /* Центрирование логотипа */
+    align-items: center;
+    padding-top: 50px; /* Отступ сверху 50px */
+    padding-bottom: 50px; /* Отступ снизу 50px */
+}
+
+.header-logo {
+    width: 179px;
+    height: 54px;
+    /* Если у вас нет фактического изображения, можно использовать background-color для демонстрации */
+    /* background-color: #f0f0f0; */
+}
+
+/* 3. РАЗДЕЛИТЕЛЬ */
+.divider {
+    width: 100%; /* Ширина 1200px (за счет .container) */
+    height: 2px;
+    background-color: #494e5a;
+    margin: 0;
+}
+
+/* 4. ОСНОВНОЙ КОНТЕНТ (Два блока) */
+.main-content {
+    display: flex;
+    width: 100%; /* 1200px */
+}
+
+/* Левый блок */
+.content-left {
+    width: 600px;
+    padding: 0;
+    /* Центрируем содержимое по вертикали внутри блока */
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    overflow: hidden;
-    position: relative;
+    justify-content: center; 
+    padding-left: 50px; /* Добавим небольшой отступ слева для красоты, так как справа картинка вплотную */
+    box-sizing: border-box;
 }
 
-/* Верхний логотип NutSoft */
-.top-logo {
-    text-align: center;
-    padding: 20px 0;
-    z-index: 10;
+/* Правый блок */
+.content-right {
+    width: 600px;
+    /* Гарантируем, что изображение займет ровно 600px в ширину */
 }
 
-.top-logo img {
-    width: 66px; /* Фиксированный размер, можно изменить */
-    height: auto;
+.content-image {
+    width: 600px;
+    height: 484px;
+    display: block;
+    /* background-color: #33363f; */ /* Для демонстрации */
 }
 
-/* Центральный блок с лого приложения и кнопкой */
-.header-content {
+/* --- Элементы левого блока --- */
+
+/* Блок с лого и заголовком */
+.title-block {
     display: flex;
-    justify-content: center;
-    align-items: center; /* Центрирует содержимое по вертикали */
-    z-index: 5;
-    text-align: center;
-    margin-top: 15vh; /* **ПОДНИМАЕМ БЛОК ВВЕРХ** */
+    align-items: center; /* Выравнивание элементов по центру вертикали */
+    margin-bottom: 40px; /* Отступ под этим блоком */
 }
 
-.app-info {
+.title-icon {
+    width: 160px;
+    height: 160px;
+    /* background-color: #2e3037; */ /* Для демонстрации */
+}
+
+.title-text {
+    margin-left: 40px; /* Отступ 40px справа от лого */
+}
+
+.title-text-top {
+    font-size: 34px;
+    font-weight: 700; /* Жирный (Bold) для "Kind Words —" */
+    margin: 0;
+    padding: 0;
+}
+
+.title-text-bottom {
+    font-size: 34px;
+    font-weight: 500; /* Полужирный/Средний (Medium) для "The Kindest App" */
+    margin: 0;
+    padding: 0;
+}
+
+/* Блок с длинным описанием */
+.description-block {
+    margin-top: 20px;
+    /* Добавляем небольшой отступ сверху, чтобы отделить от заголовка */
+}
+
+.description-text {
+    font-size: 20px;
+    font-weight: 400; /* Обычный */
+    line-height: 1.5; /* Для лучшей читаемости */
+}
+
+/* 5. FOOTER */
+.footer {
     display: flex;
+    justify-content: space-between; /* Лого слева, email справа */
     align-items: center;
-    justify-content: center;
-    gap: 30px;
+    padding: 20px 0; /* Небольшие отступы */
 }
 
-.app-logo {
-    width: 180px;
-    height: auto;
+.footer-logo {
+    /* 60% от 179px = 107.4px, 60% от 54px = 32.4px */
+    width: 107.4px; 
+    height: 32.4px;
+    /* background-color: #555861; */ /* Для демонстрации */
 }
 
-.play-button img {
-    width: 200px;
-    height: auto;
-    transition: transform 0.2s ease;
-}
-
-.play-button img:hover {
-    transform: scale(1.05);
-}
-
-/* Нижние элементы */
-.bottom-graphics {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.bg-image {
-    width: 100%;
-    height: auto;
-    z-index: 0;
-    object-fit: cover;
-}
-
-.girl-image {
-    width: 300px;
-    height: auto;
-    position: absolute;
-    bottom: 0;
-    z-index: 2;
-}
-
-/* Медиа-запросы для адаптивности */
-@media (max-width: 768px) {
-    .top-logo img {
-        width: 80px;
-    }
-    .app-logo {
-        width: 150px;
-    }
-    .play-button img {
-        width: 180px;
-    }
-    .app-info {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .girl-image {
-        width: 250px;
-    }
-    /* **НОВЫЙ КОД ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ** */
-    .header-content {
-        margin-top: 6vh; /* **УМЕНЬШАЕМ ОТСТУП, ЧТОБЫ ПОДНЯТЬ БЛОК ВЫШЕ** */
-    }
+.footer-email {
+    font-size: 16px;
+    font-weight: 500;
 }
