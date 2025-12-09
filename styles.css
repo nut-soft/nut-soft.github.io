@@ -169,6 +169,6 @@ body {
 }
 
 .footer-email {
-    font-size: 20px; /* Визуально текст email крупнее, чем стандартный 16px */
+    font-size: 16px; /* Визуально текст email крупнее, чем стандартный 16px */
     font-weight: 500;
 }
