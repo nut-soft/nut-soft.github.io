@@ -1,39 +1,38 @@
 /* Общие стили и сброс */
 body {
     background-color: #1e2025;
-    color: #ffffff; /* Белый цвет текста по умолчанию */
+    color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    display: flex; /* Для центрирования контейнера */
-    justify-content: center;
+    display: flex; 
+    justify-content: center; /* Центрирует контейнер 1200px */
 }
 
 /* 1. Основной контейнер */
 .container {
-    width: 1200px; /* Фиксированная ширина контента */
+    width: 1200px; 
     box-sizing: border-box;
+    /* Убедимся, что все элементы внутри прилегают к границам контейнера */
 }
 
 /* 2. HEADER */
 .header {
     display: flex;
-    justify-content: center; /* Центрирование логотипа */
-    align-items: center;
-    padding-top: 50px; /* Отступ сверху 50px */
-    padding-bottom: 50px; /* Отступ снизу 50px */
+    justify-content: center;
+    padding-top: 50px; 
+    padding-bottom: 50px; 
 }
 
 .header-logo {
     width: 179px;
     height: 54px;
-    /* Если у вас нет фактического изображения, можно использовать background-color для демонстрации */
-    /* background-color: #f0f0f0; */
+    /* Убедитесь, что ваше изображение логотипа NUTSDEV имеет эти размеры */
 }
 
 /* 3. РАЗДЕЛИТЕЛЬ */
 .divider {
-    width: 100%; /* Ширина 1200px (за счет .container) */
+    width: 100%; 
     height: 2px;
     background-color: #494e5a;
     margin: 0;
@@ -42,95 +41,131 @@ body {
 /* 4. ОСНОВНОЙ КОНТЕНТ (Два блока) */
 .main-content {
     display: flex;
-    width: 100%; /* 1200px */
+    width: 100%;
+    /* На макете виден значительный вертикальный отступ между разделителями */
+    padding-top: 70px; /* Отступ сверху (визуально) */
+    padding-bottom: 70px; /* Отступ снизу (визуально) */
 }
 
-/* Левый блок */
+/* Левый блок (Контент) */
 .content-left {
     width: 600px;
-    padding: 0;
-    /* Центрируем содержимое по вертикали внутри блока */
+    padding-right: 20px; /* Небольшой внутренний отступ для разделения от правой картинки */
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    padding-left: 50px; /* Добавим небольшой отступ слева для красоты, так как справа картинка вплотную */
-    box-sizing: border-box;
+    justify-content: center; /* Центрирует все элементы по вертикали относительно правой картинки */
 }
 
-/* Правый блок */
+/* Правый блок (Картинка) */
 .content-right {
     width: 600px;
-    /* Гарантируем, что изображение займет ровно 600px в ширину */
+    display: flex;
+    justify-content: flex-end; /* Прижимает изображение к правому краю 1200px контейнера */
+    align-items: center;
 }
 
 .content-image {
     width: 600px;
     height: 484px;
     display: block;
-    /* background-color: #33363f; */ /* Для демонстрации */
 }
 
 /* --- Элементы левого блока --- */
 
-/* Блок с лого и заголовком */
+/* Блок с лого (ic_kw.png) и заголовком */
 .title-block {
     display: flex;
-    align-items: center; /* Выравнивание элементов по центру вертикали */
-    margin-bottom: 40px; /* Отступ под этим блоком */
+    align-items: center;
+    margin-bottom: 25px; /* Визуальный отступ до следующего блока */
 }
 
 .title-icon {
     width: 160px;
     height: 160px;
-    /* background-color: #2e3037; */ /* Для демонстрации */
 }
 
-.title-text {
-    margin-left: 40px; /* Отступ 40px справа от лого */
+.title-text-wrapper {
+    margin-left: 40px; /* Отступ 40px справа от лого, как просили */
 }
 
-.title-text-top {
+.title-line-1 {
     font-size: 34px;
-    font-weight: 700; /* Жирный (Bold) для "Kind Words —" */
+    font-weight: 700; /* Жирный (Bold) */
     margin: 0;
     padding: 0;
 }
 
-.title-text-bottom {
+.title-line-2 {
     font-size: 34px;
-    font-weight: 500; /* Полужирный/Средний (Medium) для "The Kindest App" */
+    font-weight: 500; /* Полужирный/Средний (Medium) */
     margin: 0;
     padding: 0;
 }
 
 /* Блок с длинным описанием */
 .description-block {
-    margin-top: 20px;
-    /* Добавляем небольшой отступ сверху, чтобы отделить от заголовка */
+    margin-bottom: 40px; /* Визуальный отступ до кнопки */
+    max-width: 450px; /* Ограничиваем ширину текста, как на макете */
+}
+
+.description-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Отступ между заголовком и основным текстом */
+}
+
+.description-icon {
+    /* На макете используется та же иконка, но уменьшенная */
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.description-title {
+    font-size: 20px;
+    font-weight: 700; /* Визуально текст заголовка жирный */
+    margin: 0;
 }
 
 .description-text {
     font-size: 20px;
-    font-weight: 400; /* Обычный */
-    line-height: 1.5; /* Для лучшей читаемости */
+    font-weight: 400; 
+    line-height: 1.4; 
+    margin: 0;
 }
+
+/* Кнопка Google Play (Изображение) */
+.google-play-button {
+    display: inline-block;
+    margin-top: 15px; /* Отступ от нижнего текста */
+}
+
+.google-play-button img {
+    /* Предполагаемый размер кнопки Google Play, чтобы соответствовать макету */
+    width: 180px; 
+    height: auto;
+    display: block;
+}
+
 
 /* 5. FOOTER */
 .footer {
     display: flex;
-    justify-content: space-between; /* Лого слева, email справа */
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 0; /* Небольшие отступы */
+    padding-top: 30px; 
+    padding-bottom: 30px; 
+    width: 100%; /* Убедимся, что футер занимает всю ширину контейнера */
 }
 
 .footer-logo {
-    /* 60% от 179px = 107.4px, 60% от 54px = 32.4px */
+    /* 60% от 179x54 = 107.4px x 32.4px */
     width: 107.4px; 
     height: 32.4px;
-    /* background-color: #555861; */ /* Для демонстрации */
 }
 
 .footer-email {
-    font-size: 16px;
+    font-size: 20px; /* Визуально текст email крупнее, чем стандартный 16px */
     font-weight: 500;
 }
